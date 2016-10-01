@@ -12,14 +12,14 @@
 
 .jumbotron {
     background-image: url(all.jpg);
-    height: 320px;
+    height: 360px;
     padding: 80px;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .jumbotron .container {
-    width:1400px;
+    width:1600px;
     padding: 2px;
     text-align: center;
     color:red;
