@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <title>People</title>
+    <title>School</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--link rel="stylesheet" href="style.css"-->     
-    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css"> </head>
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="main-3.css"> </head>
-
 <body>
     <div class="nav">
         <div class="container">
             <ul class="pull-left">
-                <li><a href="#">Name</a></li>
-                <li><a href="#">Browse</a></li>
+                <li><a href="#">Ranking</a></li>
+                <li><a href="#">Scholarship</a></li>
             </ul>
             <ul class="pull-right">
                 <li><a href="#">Sign Up</a></li>
@@ -28,30 +24,52 @@
             </ul>
         </div>
     </div>
+   
     <!-- 輪播結合jumbotron-->
     <div id="slideshow" class="carousel slide" data-ride="carousel">
         <!--圖片輪播放這邊-->
         <div class="carousel-inner" role="listbox">
-        <div class="item active">
-        <div class="jumbotron">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-7">
-             <h1>BASIS schools</h1>
+            <div class="item active">
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+            <h1>BASIS schools</h1>
             <p>The best charter schools in USA</p>
-        <div class="learn-more"><a href="#">Learn More</a></div>
+                                <buttton class="btn btn-primary">Read more</buttton>
+                            </div>
+         <div class="col-md-7"> <img src="B1.jpg" alt="flash"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+            <h1>BASIS schools</h1>
+            <p>The best charter schools in USA</p>
+                                <buttton class="btn btn-primary">Read more</buttton>
+                            </div>
+         <div class="col-md-7"> <img src="B8.jpg" alt="flash"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-         <div class="col-md-5"> <img src="B1.jpg" alt="flash"> </div>
-         </div>        
-         </div>
+        <!--左右控制鍵-->
+        <div class="control-btn">
+            <a href="#slideshow" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hiddden="true"></span> </a>
+            <a href="#slideshow" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hiddden="true"></span> </a>
         </div>
-       </div>
     </div>
-    </div>
-    <div class="neighborhood-guides">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+        <div class="neighborhood-guides">
         <div class="container">
-            <h2>The schools</h2>
-            <p>provide good education</p>
+            <h2>Top BASIS schools</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="thumbnail animated bounceIn " data-wow-delay="20s"><img src="B2.jpg" alt=""></div>
@@ -94,6 +112,8 @@
     <script>
         new WOW().init();
     </script>
+
+    
 </body>
 
 </html>
