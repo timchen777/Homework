@@ -19,11 +19,11 @@
 }
 
 .jumbotron .container {
-    width:1600px;
+    width:1200px;
     padding: 2px;
     text-align: center;
     color:red;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(100,100,100, 0.5);
 }
 
 .jumbotron h1 {
