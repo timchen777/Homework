@@ -1,0 +1,131 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    color: darkblue;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-decoration: none;
+}
+
+.jumbotron {
+    background-image: url(Thankyou.jpg);
+    height: 900px;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .container {
+    width:1200px;
+    padding: 2px;
+    text-align: center;
+    color:red;
+    background-color: rgba(100,100,100, 0.5);
+}
+
+.jumbotron h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.jumbotron p {
+    font-size: 28px;
+    color: #ffb550;
+}
+
+.learn-more {
+    width: 120px;
+    height: 25px;
+    border-radius: 5%;
+    background-color: rgba(235, 145, 39);
+    color: white;
+    text-align: center;
+}
+
+.learn-more a {
+    color: white;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    color: #f2caa3;
+    background-color: rgb(184, 134, 11, 0.5);
+}
+
+.information {
+    background-color: darkgray;
+    height: 300px;
+    padding: 50px;
+}
+
+.information a {
+    height: 100px;
+    padding: 10px;
+    border-radius: 5%;
+    background-color: darkgray;
+    color: white;
+    text-decoration: none;
+}
+
+.information a:hover {
+    background-color: rgba(235, 145, 39, 0.6);
+}
+
+a.button {
+    font: bold 11px Arial;
+    font-size: 20px;
+    border-radius: 25px;
+    color: white;
+    background: #184d69;
+    padding: 10px;
+    width: 180px;
+    height: 80px;
+}
