@@ -1,0 +1,12 @@
+.jumbotron {
+    background-image: url(images/zootopia.jpg);
+    color: white;
+    height: 100vh;
+    background-size: cover;
+    padding: 160px;
+}
+
+.thumbnail {
+    height: 600px;
+    margin: 30px;
+}

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>title</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style11.css"> </head>
+
+<body>
+    <!-- 輪播結合jumbotron-->
+    <div id="slideshow" class="carousel slide" data-ride="carousel">
+        <!--圖片輪播放這邊-->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h1>Hello World</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, dolor commodi aut veniam voluptatum voluptatibus, provident nesciunt pariatur! Accusamus ipsum in quia optio animi culpa inventore quisquam, commodi eaque officia? </p>
+                                <buttton class="btn btn-primary">Read more</buttton>
+                            </div>
+                            <div class="col-md-7"> <img src="images/sloth.jpg" alt="flash"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h1>Hello World</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, dolor commodi aut veniam voluptatum voluptatibus, provident nesciunt pariatur! Accusamus ipsum in quia optio animi culpa inventore quisquam, commodi eaque officia? </p>
+                                <buttton class="btn btn-primary">Read more</buttton>
+                            </div>
+                            <div class="col-md-7"> <img src="images/pic.jpg" alt="flash"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左右控制鍵-->
+        <div class="control-btn">
+            <a href="#slideshow" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hiddden="true"></span> </a>
+            <a href="#slideshow" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hiddden="true"></span> </a>
+        </div>
+        <!--下面的點點-->
+        <ol class="carousel-indicators">
+            <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+            <li data-target="#slideshow" data-slide-to="1"></li>
+        </ol>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail"> <img src="images/lion.jpg" alt="">
+                <div class="caption">
+                    <h1>title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsam et rerum maxime, vero soluta cum libero quasi quidem ullam accusantium magni, inventore voluptatum, deserunt iure laboriosam illum explicabo harum!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail"> <img src="images/sloth2.png" alt="">
+                <div class="caption">
+                    <h1>title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsam et rerum maxime, vero soluta cum libero quasi quidem ullam accusantium magni, inventore voluptatum, deserunt iure laboriosam illum explicabo harum!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail"> <img src="images/clawhauser.jpg" alt="">
+                <div class="caption">
+                    <h1>title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias ipsam et rerum maxime, vero soluta cum libero quasi quidem ullam accusantium magni, inventore voluptatum, deserunt iure laboriosam illum explicabo harum!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
