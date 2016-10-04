@@ -1,28 +1,8 @@
-.jumbotron {
-    background-image: url(images/zootopia.jpg);
-    color: white;
-    height: 100vh;
-    background-size: cover;
-    padding: 160px;
+.nav li {
+    display: inline;
 }
 
-.thumbnail {
-    height: 300px;
-    margin: 30px;
-}
-
-.glyphicon-home {
-    color: #b0eb85;
-    font-size: 28px;
-    padding-right: 15px;
-}
-
-.glyphicon-user {
-    font-size: 15px;
-    color: cyan;
-    padding-right: 10px;
-}
-
-.main {
-    width: 80%;
+.nav a {
+    color: beige;
+    
 }
