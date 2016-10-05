@@ -853,7 +853,7 @@ ul.cake_hover li a i.tw{
 	min-height: 500px;
 }
 .logo {
-  margin-top: 19%;
+  margin-top: 19%;    
 }
 }
 @media (max-width:1024px){
@@ -948,6 +948,8 @@ ul.news_list li.date_desc h5 {
 }
 .logo img, .about_desc img {
   width: 40%;
+    background-color: rgba(100,100,100, 0.5);
+
 }
 .tz-title-3 span {
   color: #E01B07;
@@ -982,6 +984,8 @@ ul.news_list li.date_desc h5 {
 }
 .logo {
   margin-top: 17%;
+        background-color: rgba(100,100,100, 0.5);
+
 }
 .span_1_of_3 {
   width: 100%;
@@ -995,7 +999,9 @@ ul.news_list li.date_desc h5 {
 }
 @media (max-width:320px){
 .logo img, .about_desc img {
-  width: 70%;
+  width: 50%;
+        background-color: rgba(100,100,100, 0.5);
+
 }	
 .header {
   min-height: 150px;
