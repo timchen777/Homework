@@ -1,0 +1,91 @@
+<html>
+<title>CSS-HW7</title>
+<head>
+<style type="text/css">
+.solar-system{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: #080e24;
+}
+.solar-system li{
+    list-style-type:none;
+    border: 2px solid #394057;
+    border-radius: 50%;
+    position: absolute;
+}
+.solar-system li span{
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+}
+.solar-system li.sun{
+    width: 40px;
+    height: 40px;
+    border-width: 0px;
+    background: linear-gradient(180deg, gold, #ffb100);
+    box-shadow: 0 0 20px 4px gold;
+    
+}
+.solar-system li.Mercury{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    animation: 7s orbit infinite linear;
+}
+.solar-system li.Mercury > span{
+    width: 6px;
+    height: 6px;
+    background: brown;
+    left: calc(50% - 3px);
+    top: -4px;
+}
+.solar-system li.Venus{
+    width: 190px;
+    height: 190px;
+    position: absolute;
+    animation: 8s orbit infinite linear;
+}
+.solar-system li.Venus > span{
+    width: 8px;
+    height: 8px;
+    background: gold;
+    left: calc(50% - 4px);
+    top: -5px;
+}
+.solar-system li.earth{
+    width: 250px;
+    height: 250px;
+    animation: 10s orbit infinite linear;
+}
+.solar-system li.earth>span{
+    width: 10px;
+    height: 10px;
+    background: #3967bf;
+    left: calc(50% - 5px);
+    top: -5px;
+    animation: 4s orbit infinite linear;
+}
+.solar-system li.earth span.moon{
+    width: 4px;
+    height: 4px;
+    background: white;
+    left: calc(50% - 2px);
+    top: -12px;
+}
+@keyframes orbit { 
+    from { transform:rotate(0deg)} 
+    to { transform:rotate(360deg)} 
+}
+</style>
+</head>
+<body>
+<ul class="solar-system">
+  <li class="sun"><span></span></li>
+  <li class="Mercury"><span></span></li>
+  <li class="Venus"><span></span></li>
+  <li class="earth"><span><span class="moon"></span></span></li>
+</ul>
+</body>
+</html>

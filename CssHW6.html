@@ -1,0 +1,59 @@
+<html>
+<title>CSS-HW6</title>
+<head>
+<style type="text/css">
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  padding: 60px;
+  border-radius: 10%;
+  text-align: center;
+  background: lightgreen;
+}
+
+.spinner > div {
+  background-color: white;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  animation: loading 2s infinite;
+}
+
+.spinner .rect2 {
+  animation-delay: -1.6s;
+}
+
+.spinner .rect3 {
+  animation-delay: -1.4s;
+}
+
+.spinner .rect4 {
+  animation-delay: -1.2s;
+}
+
+.spinner .rect5 {
+  animation-delay: -1.0s;
+}
+
+@keyframes loading {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+  }
+  20% { 
+    transform: scaleY(1.0);
+  }
+}
+</style>
+</head>
+<body>
+<div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div>
+</body>    
+</html>
+    
