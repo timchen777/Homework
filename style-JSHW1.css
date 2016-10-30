@@ -1,7 +1,7 @@
 .jumbotron {
-    background-image: url(images/zootopia.jpg);
+    background-color: darkcyan;
     color: white;
-    height: 60vh;
+    height: 30vh;
     background-size: cover;
     padding: 36px;
     padding-left: 360px;
