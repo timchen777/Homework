@@ -5,63 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <title>Photo Switcher</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style-JSHW1.css"> </head>
-
+    <title>JSHW1</title>
+    <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="main-JSHW1.css"> 
+    <link rel="stylesheet" href="style-JSHW1.css"> 
+    </head>
 <body>
-   <div class="topMenu1">Photo &nbsp;&nbsp; Switcher
-   </div>
-<!--       <ul class="breadcrumb">-->
-<!--            <li data-target="#slideshow" data-slide-to="0" >Previous</li>-->
-<!--            <li data-target="#slideshow" data-slide-to="1">Next</li>-->
-<!--       </ul>-->
-<!--   <h1 class="h1">Photo Switcher</h1>-->
+
+    <div class="topMenu1">
+        <h1> Photo Switcher </h1>
+    </div>
     <!-- 輪播結合jumbotron-->
     <div id="slideshow" class="carousel slide" data-ride="carousel">
         <!--圖片輪播放這邊-->
         <div class="carousel-inner" role="listbox">
-            <div class="item active" >
-                <div class="jumbotron" >
-                    <div class="container">
-                        <div class="row" >
-                            <div class="col-md-7" id="pic1"> <img src="pic1.jpg" alt="flash"> </div>
-                        </div>
-                    </div>
+            <div class="item active">
+                <div class="jumbotron">
+                    <div class="col-md-5" id="pic1"> <img src="pic5.jpg" alt="flash"> </div>
                 </div>
             </div>
-            <div class="item" >
-                <div class="jumbotron" >
-                    <div class="container">
-                        <div class="row" >
-                            <div class="col-md-7" id="pic2"> <img src="pic2.jpg" alt="flash"> </div>
-                        </div>
-                    </div>
+            <div class="item">
+                <div class="jumbotron">
+                     <div class="col-md-5" id="pic2"> <img src="pic6.jpg" alt="flash"> </div>
                 </div>
             </div>
-            <div class="item" >
-                <div class="jumbotron" >
-                    <div class="container">
-                        <div class="row" >
-                            <div class="col-md-7" id="pic3"> <img src="pic3.jpg" alt="flash"> </div>
-                        </div>
-                    </div>
+            <div class="item">
+                <div class="jumbotron">
+                    <div class="col-md-5" id="pic3"> <img src="pic7.jpg" alt="flash"> </div>
                 </div>
             </div>
-            <div class="item" >
-                <div class="jumbotron" >
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7"  id="pic4"> <img src="pic4.jpg" alt="flash"> </div>
-                        </div>
-                    </div>
+            <div class="item">
+                <div class="jumbotron">
+                     <div class="col-md-5" id="pic4"> <img src="pic8.jpg" alt="flash"> </div>
                 </div>
             </div>
         </div>
         <!--左右控制鍵-->
         <div class="control-btn">
-            <a href="#slideshow" class="left carousel-control" role="button" data-slide="prev"> 
-            <span class="glyphicon glyphicon-chevron-left" aria-hiddden="true"></span> </a>
+            <a href="#slideshow" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hiddden="true"></span> </a>
             <a href="#slideshow" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hiddden="true"></span> </a>
         </div>
         <!--下面的點點-->
@@ -70,11 +54,20 @@
             <li data-target="#slideshow" data-slide-to="1"></li>
             <li data-target="#slideshow" data-slide-to="2"></li>
             <li data-target="#slideshow" data-slide-to="3"></li>
-        </ol>
+        </ol>        
     </div>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"--><!--/script-->
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+    src="wow.min.js">
+    </script>
+    <script>
+        new WOW().init();
+    </script>
+
+    
 </body>
 
 </html>
