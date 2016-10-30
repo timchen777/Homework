@@ -1,0 +1,58 @@
+.jumbotron {
+    background-image: url(images/zootopia.jpg);
+    color: white;
+    height: 60vh;
+    background-size: cover;
+    padding: 36px;
+    padding-left: 360px;
+}
+
+.thumbnail {
+    height: 500px;
+}
+
+.glyphicon-home {
+    color: #b0eb85;
+    font-size: 28px;
+    padding-right: 15px;
+}
+
+.glyphicon-user {
+    font-size: 15px;
+    color: cyan;
+    padding-right: 10px;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.thumbnail.avatar {
+    text-align: center;
+    border: none;
+    font-size: 20px;
+}
+
+.avatar img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.topMenu1 {
+    font-family: fantasy;
+    font-size: 20px;
+    color: darkblue;
+    text-align: center;
+}
+.breadcrumb {
+    font-family:monospace;
+    font-size: 15px;
+    color: darkblue;
+    padding-left: 450px;
+}
+.carousel-indicators {
+    color: black;
+    background-color:darkgray;
+}
