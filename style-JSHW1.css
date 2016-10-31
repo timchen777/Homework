@@ -1,10 +1,10 @@
 .jumbotron {
     background-color: darkcyan;
-    color: yellow;
+    color: white;
     height: 60vh;
     background-size: cover;
     padding: 36px;
-    padding-left: 400px;
+    padding-left: 380px;
 }
 
 .thumbnail {
