@@ -1,53 +1,26 @@
 <html>
-<title>CSS-HW6</title>
+<title>CSS-HWㄓ</title>
 <head>
 <style type="text/css">
-.spinner {
-  margin: 100px auto;
-  width: 50px;
-  height: 40px;
-  padding: 60px;
-  border-radius: 10%;
-  text-align: center;
-  background: lightgreen;
-}
-
-.spinner > div {
-  background-color: white;
-  height: 100%;
-  width: 6px;
-  display: inline-block;
-  animation: loading 2s infinite;
-}
-
-.spinner .rect2 {
-  animation-delay: -1.6s;
-}
-
-.spinner .rect3 {
-  animation-delay: -1.4s;
-}
-
-.spinner .rect4 {
-  animation-delay: -1.2s;
-}
-
-.spinner .rect5 {
-  animation-delay: -1.0s;
-}
-
-@keyframes loading {
-  0%, 40%, 100% { 
-    transform: scaleY(0.4);
-  }
-  20% { 
-    transform: scaleY(1.0);
-  }
+.playground{
+ flex-flow: column-reverse wrap-reverse;
+ align-content:space-between;
+ justify-content:center;
 }
 </style>
 </head>
 <body>
-<h1>TBD</h1>
+<div class="hint"></div>
+<div class="hint-s"></div>
+<link rel="stylesheet" href="https://kevinljw.github.io/pic-pool/pokestyle.css">
+<div class="playground">
+  <div class="pokemon pika"></div>
+  <div class="pokemon kabe"></div>
+  <div class="pokemon eev"></div>
+  <div class="pokemon egg"></div>
+  <div class="pokemon jeni"></div>
+  <div class="pokemon uball"></div>
+  <div class="pokemon ball"></div>     
 </div>
 </body>    
 </html>
