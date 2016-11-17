@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Game</title>
+<script>
+//-------------------- localhost:8080/game.htm ---------------------------
+var ga={
+    "dom":{"loading":null,"main":null,"game":null},
+	"ctx":null, "audioCtx":null,
+	"res":{
+		"total":4, "loaded":0,
+		"imgs":{"plane":"plane.png", "explosion":"explosion.png"},
+		"sounds":{"bullet":"bullet.mp3", "explosion":"explosion.mp3"}
+	},
+    "data":{"circle":null,"drawables":null},
+    "lib":{}
+};
+window.onload=function(){
+    //Init DOM object
+    ga.dom.loading=document.getElementById("loading");
+    ga.dom.main=document.getElementById("main");
+    ga.dom.game=document.getElementById("game");
+    //Init Canvas 
+    ga.ctx=document.getElementById("cvs").getContext("2d");
+	// 初始化音效環境
+	ga.audioCtx=new AudioContext();
+	// 載入資源
+	ga.loadResources();
+};
+ga.loadResources=function(){
+	ga.loadImages();
+	ga.loadSounds();
+};
+	// 載入影像檔案
+	ga.loadImages=function(){
+		for(var name in ga.res.imgs){
+			ga.loadImage(name, ga.res.imgs[name]);
+		}
+	};
+	ga.loadImage=function(name, src){
+		var img=new Image();
+		img.src=src;
+		img.onload=function(){
+			ga.res.imgs[name]=this;
+			ga.resourceLoaded();
+		};
+	};
+	// 載入音效檔案
+	ga.loadSounds=function(){
+		for(var name in ga.res.sounds){
+			ga.loadSound(name, ga.res.sounds[name]);
+		}
+	};
+	ga.loadSound=function(name, src){
+		var req=new XMLHttpRequest();
+		req.open("get", src); // 設定連線方法和網址
+		req.responseType="arraybuffer"; // 設定回傳的資料型態
+		req.onload=function(){ // 註冊 load 事件
+			ga.audioCtx.decodeAudioData(this.response, function(buffer){
+				ga.res.sounds[name]=buffer;
+				ga.resourceLoaded();
+			});
+		};
+		req.send(); // 送出連線
+	};
+	// 資源載入進度的偵測
+	ga.resourceLoaded=function(){
+		ga.res.loaded++;
+        ga.dom.loading.innerHTML=(100*ga.res.loaded/ga.res.total)+"%";
+		if(ga.res.loaded>=ga.res.total){
+			ga.initMain();
+		}
+	};
+ga.initMain=function(){
+	// 啟動遊戲的主選單
+    ga.dom.loading.style.display="none";
+    ga.dom.game.style.display="none";
+    ga.dom.main.style.display="block";    
+};
+ga.initGame=function(){
+    //switch interface, start game
+    ga.dom.main.style.display="none";
+    ga.dom.game.style.display="block";
+    //init game's data, clean up last game's data
+    ga.data.plane=new ga.lib.plane();
+    //ga.data.plane=new ga.lib.Plane();
+    ga.data.circle=0;
+    ga.data.drawables=[];
+    ga.data.drawables.push=(ga.data.plane);
+    //start game's sequence
+    window.setInterval(ga.refreshGame,20);
+};
+ga.refreshGame=function(){
+    //renew data
+    for (var i=0; i<ga.data.drawables.length;i++){
+        if (ga.data.drawables[i].update()){
+            ga.data.drawables.splice(i,1);
+            i--;
+        }
+    }
+    //clear canvas
+    ga.ctx.fillRect(0,0,ga.ctx.canvas.width, ga.ctx.canvas.height);
+    //refresh canvas
+    for (var i=0;i<ga.data.drawables.length;i++){
+        ga.data.drawables[i].draw();
+    }
+    //refresh game cycle times
+    ga.data.circle++;
+};    
+//build up table[category]    
+ga.lib.plane=function() {
+    this.x=ga.ctx.canvas.width/2;
+    this.y=ga.ctx.canvas.height/2;
+    this.size=20;
+    this.update=function(){
+        return false;
+    };
+    this.draw=function(){
+        ga.ctx.save();
+        ga.ctx.drawImage(ga.res.imgs.plane,
+          this.x-this.size/2,this.y-this.size/2,
+          this.size,this.size);
+        ga.ctx.restore();
+    };
+};
+</script>
+</head>
+<body>
+<div id="loading"></div>
+<div id="main" style="display:none"></div>
+  <button onclick="ga.initGame();">Start</button>
+<div id="game" style="display:none"></div>
+    <canvas id="cvs" width="640" height="480"></canvas>
+<div></div>
+</body>
+</html>
