@@ -162,7 +162,7 @@ ga.recordScore=function(){
         if (ga.data.maxCircle<ga.data.circle) {
           ga.data.maxCircle=ga.data.circle;
         }
-        ga.ctx.fillText("< Use arrow key to control airplane to escape the bullets >",20,40);
+        ga.ctx.fillText("< Use arrow key to control airplane to escape the bullets; Click mouse to restart the game. >",20,40);
         ga.ctx.fillText("最高分數 : "+(ga.data.maxCircle*0.01)+"s",20,60);
         ga.ctx.fillText("這次分數 : "+(ga.data.circle*0.01)+"s",20,80);
         ga.ctx.restore();
