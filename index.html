@@ -12,7 +12,7 @@ var ga={
 		imgs:{plane:"plane.png", explosion:"explosion.png"},
 		sounds:{bullet:"bullet.mp3", explosion:"explosion.mp3"}
 	},
-	data:{circle:-1, plane:null, drawables:null},
+	data:{circle:-1, plane:null, drawables:null, maxCircle:0},
 	key:{left:false, top:false, right:false, bottom:false},
 	evts:{}, lib:{}
 };
@@ -90,8 +90,10 @@ ga.startGame=function(){
 	// 接收鍵盤命令
 	document.addEventListener("keydown", ga.evts.keydown);
 	document.addEventListener("keyup", ga.evts.keyup);
-	// 初始化資料
-	ga.data.circle=0;
+    //==Record Score ==
+    ga.recordScore();
+	// 初始化資料2
+    ga.data.circle=0;
 	ga.data.plane=new ga.lib.Plane();
 	ga.data.bulletSystem=new ga.lib.bulletSystem();
     
@@ -144,9 +146,26 @@ ga.refreshGame=function(){
     // collision detection
     ga.checkGameover();
     //Display Score
-    console.log("Score: "+ga.data.circle);
+    //console.log("Score: "+ga.data.circle);
+    //Draw the life count of the plane
+    //==Record Score ==
+    ga.recordScore();
     // 更新回合數
 	ga.data.circle++;
+};
+ga.recordScore=function(){
+        ga.ctx.save();
+        ga.ctx.globalAlpha=0.5;
+        ga.ctx.fillRect(0,0,ga.ctx.canvas.width,ga.ctx.canvas.height);
+        ga.ctx.globalAlpha=1;
+        ga.ctx.fillStyle="white";
+        if (ga.data.maxCircle<ga.data.circle) {
+          ga.data.maxCircle=ga.data.circle;
+        }
+        ga.ctx.fillText("< Use arrow key to control airplane to escape the bullets >",20,40);
+        ga.ctx.fillText("最高分數 : "+(ga.data.maxCircle*0.01)+"s",20,60);
+        ga.ctx.fillText("這次分數 : "+(ga.data.circle*0.01)+"s",20,80);
+        ga.ctx.restore();
 };
 ga.checkGameover=function(){
     var over=false;
