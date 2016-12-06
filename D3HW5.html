@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3</title>
+    <style>
+        p {border:2px solid red; 
+        height: 20px;
+        width : 80px;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<p></p>
+<script>
+    var body=d3.select("body");
+//    body.append("div").text("Hello D3!");
+//    body.append("h1").text("Hello D3!");
+    function launch() {
+      var num=random(1911,2016);
+        console.log(num);
+//      body.append("p").text(num);
+//        d3.select("body").append("p").text(num);
+        d3.select("p").text(num);
+    }
+    function random(M,N) {
+      return Math.ceil(Math.random()*(M-N)+N);       
+    }
+</script>
+<input type="button" onclick="launch()" value="Click to see RanDomNumber 1911~2016">
+</body>
+</html>

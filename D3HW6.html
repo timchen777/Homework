@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3</title>
+    <style>
+        p {border:2px solid red; 
+        height: 80px;
+        width=100px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+<!--<input type="text" class="number" value="77">-->
+<input type="text" class="number" >
+<script>
+    function launch() {
+      var num= d3.select('.number').property("value");
+      console.log(num);
+      d3.select('.number').property("value",num*num);
+    }
+</script>
+<input type="button" onclick="launch()" value="計算平方值">
+</body>
+</html>
