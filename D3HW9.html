@@ -25,7 +25,7 @@
                       d3.select("svg")
                         .append("rect")
                         .attr({
-                        x: 145,
+                        x: 195,
                         y: 10+12*count,
                         width: dataSet[i].amount/100000000,
                         height: 10,
@@ -41,7 +41,7 @@
                       d3.select("svg")
                         .append("text")
                         .attr({
-                        x: dataSet[i].amount/100000000+150,
+                        x: dataSet[i].amount/100000000+200,
                         y: 16+12*count,
                         "font-size": 5
                       }).text(Math.round(dataSet[i].amount/1000000000,1));                    
@@ -50,7 +50,6 @@
             }
        });
    </script>
-    <br><br>
     <a href="indexD3.html">D3.js 互動式資料視覺化-入門班 【276期】Home</a><br>
 </body>
 </html>
