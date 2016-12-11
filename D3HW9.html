@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>d3-start</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <style>
+        div{
+            font-size: 7px;
+        }
+    </style>
+</head>
+<body>
+  <svg width="400" height="300">
+      
+  </svg>
+   
+   <script>
+       console.log("JSON!");
+       d3.json("invoice-taipei.json", function(dataSet){
+           var svg = d3.select("svg");
+           var count = 0;
+           for(var i=0; i<dataSet.length; i++){
+                if ((dataSet[i].date==="2016/8/1") && (dataSet[i].cid==="A") && (dataSet[i].amount >1000000000 )) {                   
+                      d3.select("svg")
+                        .append("rect")
+                        .attr({
+                        x: 125,
+                        y: 10+12*count,
+                        width: dataSet[i].amount/100000000,
+                        height: 10,
+                        fill: "red"
+                      });
+                      d3.select("svg")
+                        .append("text")
+                        .attr({
+                        x: 0,
+                        y: 16+12*count,
+                        "font-size": 5
+                      }).text(dataSet[i].industry);
+                      d3.select("svg")
+                        .append("text")
+                        .attr({
+                        x: dataSet[i].amount/100000000+130,
+                        y: 16+12*count,
+                        "font-size": 5
+                      }).text(Math.round(dataSet[i].amount/1000000000,1));                    
+                      count++;;               
+                 }                
+            }
+       });
+   </script>
+    <br><br>
+    <a href="indexD3.html">D3.js 互動式資料視覺化-入門班 【276期】Home</a><br>
+</body>
+</html>
