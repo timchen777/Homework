@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script src="https://d3js.org/d3.v3.min.js"></script>    
+    <title>D3</title>
+</head>
+<body>
+<!--   <svg width="400" height="400"></svg>-->
+   <div></div>
+     <script>
+       var arr = [85, 60, 99, 49, 77, 82];
+//for(var i=0; i<arr.length; i++){
+//d3.select("body").append("div").datum(arr[i]).text(function(d){return d;});
+//}
+    //var selection=d3.select("svg").selectAll("rect").data(arr);
+ 
+    //var selection=d3.select("body").selectAll("div").data(arr);
+    //selection.text(function(d){return d;});   
+    //selection.enter().append("div").text(function(d){return d;});   
+    //selection.exit().remove();
+         
+function bind(data){
+    var selection=d3.select("body").selectAll("div").data(data);
+    selection.enter().append("div");   
+    selection.exit().remove();
+}
+function render(){
+    //d3.selectAll("div").style({color:"red"}).text(function(d,i){return (i+1)+":"+d;});
+    d3.selectAll("div").style({color:function(data1){if (data1<70){return "red";}
+                                                else {return "black";}
+                                                }}).text(function(d,i){return (i+1)+":"+d;});
+}     
+    bind(arr);
+    render();
+    </script>
+<br>
+<a href="indexD3.html">D3.js 互動式資料視覺化-入門班 【276期】Home</a><br>    
+    
+</body>
+</html>
