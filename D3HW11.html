@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<script src="https://d3js.org/d3.v3.min.js"></script>    
+    <title>D3</title>
+</head>
+<body>
+<!--   <svg width="400" height="400"></svg>-->
+    <input type="button" onclick="update()" value="add">
+     <script>
+       var arr = [85, 60, 99, 49, 77, 82];
+//for(var i=0; i<arr.length; i++){
+//d3.select("body").append("div").datum(arr[i]).text(function(d){return d;});
+//}
+    //var selection=d3.select("svg").selectAll("rect").data(arr);
+ 
+    //var selection=d3.select("body").selectAll("div").data(arr);
+    //selection.text(function(d){return d;});   
+    //selection.enter().append("div").text(function(d){return d;});   
+    //selection.exit().remove();
+
+         var w=900;
+         var h=500;
+         var p=100;
+         svg(w,h);
+    bind(arr);
+    render(w,h,p);
+function svg(width,height){
+    d3.select("body").append("svg").attr({
+        width:width,
+        height:height
+    })
+}
+         
+function bind(data){
+    var selection=d3.select("svg").selectAll("rect").data(data);
+    selection.enter().append("rect");   
+    selection.exit().remove();
+    var selection_text=d3.select("svg").selectAll("text").data(data);
+    selection_text.enter().append("text");   
+    selection_text.exit().remove();
+}
+function render(width,height,padding){
+    //d3.selectAll("div").style({color:"red"}).text(function(d,i){return (i+1)+":"+d;});
+    //d3.selectAll("div").style({color:function(data1){if (data1<70){return "red";}
+    //                                            else {return "black";}
+    //                                            }}).text(function(d,i){return (i+1)+":"+d;});
+    d3.selectAll("rect").attr({
+        x:function(d,i){
+            return padding+42*i;
+        },
+        y:function(d,i){
+            return height-padding-d;
+        },
+        width:40,
+        height:function(d,i){
+            return d;
+        },
+        fill: function(d) {
+          if (d<70) {
+            return "red";
+          }
+          else
+            return "green";
+    }
+    });
+    d3.selectAll("text").attr({
+        x:function(d,i){
+            return 10+padding+42*i;
+        },
+        y:height-padding+20
+    }).text(function(d){
+        return d;
+    });
+    }          
+function update() {
+    arr.push(random(20,100));
+    console.log(arr);
+    bind(arr);
+    render(w,h,p);
+}
+function random(n,m) {
+    return Math.ceil(Math.random()*(m-n)+n);
+}
+
+</script>    
+
+<a href="indexD3.html">D3.js 互動式資料視覺化-入門班 【276期】Home</a><br>    
+
+</body>
+</html>
