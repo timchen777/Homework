@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <style>
+        body{
+            background: #eee;
+        }
+        g.arc text{
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var w = 1200;
+        var h = 800;
+        var padding = 90;
+        
+        svg();       
+    
+        d3.csv("invoice.csv", row, function(dataSet){
+            
+            
+           bind(dataSet);
+           render(dataSet);
+           
+        });
+        function row(d){
+            //TODO-1.轉換資料型態，提示：三行
+            d.amount = +d.amount;
+            d.number = +d.number;
+            d.value = +d.amount;
+            //---->
+            return d;
+        }
+        
+        function svg(){
+            d3.select("body").append("svg").attr({
+                width: w,
+                height: h
+            });
+            d3.select("svg").append("g").append("rect").attr({
+                width: "100%",
+                height: "100%",
+                fill: "white"
+            });
+           
+        }
+        
+        function bind(dataSet){
+            var filtered_dataSet = dataSet.filter( function(d) {
+                return d.date==="2016/8/1";
+            })
+        }
+        
+        function bind(dataSet){
+                      //???2.TODO-再依城市劃分
+            var nested_dataSet = d3.nest()
+                      .key(function(d){return d.industry;})
+                      .key(function(d){return d.city;})
+                      .entries(dataSet);
+            
+            console.log(nested_dataSet);
+            
+            var root = {values: nested_dataSet};
+            
+            var packed_dataSet = d3.layout.pack()
+                        .size([w,h])
+                        .padding(2)
+                        //???TODO-5.依大小排序，目標:大內外小
+                        .sort(function(a,b){
+                            return d3.descending(a.value,b.value);
+                        })
+                        .children( function(d) {
+                            return d.values;
+                        }
+                             //???TODO-3.<問>要回傳什麼？
+                        )
+                        .nodes(root);
+            
+            console.log(packed_dataSet);
+            
+            //???TODO-6.如何把最外的大圓去掉？
+            packed_dataSet = packed_dataSet.filter(function(d){
+                return d.parent;
+            })
+            var selection = d3.select("svg")
+                                .selectAll("circle")
+                                .data(packed_dataSet);
+            selection.enter().append("circle");
+            selection.exit().remove();
+        }
+        function render(dataSet){
+            
+            var fScale = d3.scale.category20();
+            
+            d3.selectAll("circle")
+               .attr({
+                cx: function(d) { return d.x; }, // 用 x,y 當圓心
+                cy: function(d) { return d.y; },
+                r : function(d) { return d.r; }, // 用 r 當半徑
+                //fill: "#eee",          //???TODO-4.依行業別填不同色            
+                fill: function(d) {
+                    if (d.hasOwnProperty("industry")){
+                      return fScale(d.industry);
+                    }
+                    else 
+                      //return "lightgrey";
+                      return "white";
+                },
+                stroke: "#666",       // 邊框畫深灰色
+              });
+            
+        }
+    </script>
+
+</body>
+</html>

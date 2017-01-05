@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>force</title>
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <style>
+        body{
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var w = 1000;
+        var h = 600;
+        var padding = 90;
+        
+        svg();       
+    
+        d3.csv("invoice.csv", row, function(dataSet){
+            
+           bind(dataSet);
+          //render();
+           
+        });
+        function row(d){
+            
+            d.amount = +d.amount;
+            d.number = +d.number;
+                
+            return d;
+        }
+        
+        function svg(){
+            d3.select("body").append("svg").attr({
+                width: w,
+                height: h
+            });
+            d3.select("svg").append("g").append("rect").attr({
+                width: "100%",
+                height: "100%",
+                fill: "white"
+            });
+           
+        }
+        
+        function bind(dataSet){
+            //TODO-依日期分類產生新陣列
+            //var nested_dataSet = [];
+            var nested_dataSet = d3.nest().key(function(d){return d.date;})
+                                          .entries(dataSet);
+                               
+            //console.log(nested_dataSet);
+            
+            var force = d3.layout.force()
+                        .size([w,h])
+                        //TODO-調整彼此引力參數            
+                        .charge(-60)
+                        //.charge( function(d) {
+                        //    return -d.values.length/5;
+                        //}
+                        .nodes(nested_dataSet)  
+                        .on("tick", render)
+                        .start();
+            console.log(nested_dataSet);
+            
+            
+            var selection = d3.select("svg")
+                                .selectAll("circle")
+                                .data(nested_dataSet);
+            selection.enter().append("circle").call(force.drag);
+            selection.exit().remove();
+        }
+        function render(){
+        
+            //TODO-把每個circle畫出來
+            var fscale = d3.scale.category20();
+            d3.selectAll("circle")
+               .attr({
+                cx: function(d){
+                    return d.x;
+                },
+                cy: function(d){
+                    return d.y;
+                },
+                r: function(d){
+                    return d.values.length/40;
+                },
+                fill:function(d){
+                    return fscale(d.key);
+                }
+                
+            });
+            
+        }
+        
+    </script>
+
+</body>
+</html>
